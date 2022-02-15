@@ -34,8 +34,4 @@ $botonCalcular.onclick=function(){
 totalizarPorUnidadDeTiempo($horasVideos,$minutosVideos,$segundosVideos)
 document.querySelector("strong").innerText=` ${totalHoras} horas 
   ${totalMinutos} minutos y ${totalSegundos} segundos.`
-}
-
-
-
-
+};
