@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css" />
+
     <title>Tarea 3</title>
 </head>
 <body>
@@ -11,32 +13,44 @@
     <body>
       <div class="container">
         <form id="formulario" onsubmit="return false">
-          <p>Video 1</p>
-          <input type="number" class="horas-video" placeholder="Ingrese duración en horas">
-          <input type="number" class="minutos-video" placeholder="Ingrese duración en minutos">
-          <input type="number" class="segundos-video" placeholder="Ingrese duración en segundos"><br>
-          <p>Video 2</p>
-          <input type="number" class="horas-video" placeholder="Ingrese duración en horas">
-          <input type="number" class="minutos-video" placeholder="Ingrese duración en minutos">
-          <input type="number" class="segundos-video" placeholder="Ingrese duración en segundos"><br>
-          <p>Video 3</p>
-          <input type="number" class="horas-video" placeholder="Ingrese duración en horas">
-          <input type="number" class="minutos-video" placeholder="Ingrese duración en minutos">
-          <input type="number" class="segundos-video" placeholder="Ingrese duración en segundos"><br>
-          <p>Video 4</p>
-          <input type="number" class="horas-video" placeholder="Ingrese duración en horas">
-          <input type="number" class="minutos-video" placeholder="Ingrese duración en minutos">
-          <input type="number" class="segundos-video" placeholder="Ingrese duración en segundos"><br>
-          <p>Video 5</p>
-          <input type="number" class="horas-video" placeholder="Ingrese duración en horas">
-          <input type="number" class="minutos-video" placeholder="Ingrese duración en minutos">
-          <input type="number" class="segundos-video" placeholder="Ingrese duración en segundos"><br>
-          <input type="submit" id="submit" value="Calcular tiempo total">
+          <div class="video-input-group">
+            <p>Video 1</p>
+            <input type="number" class="horas-video" placeholder="Ingrese duración en horas">
+            <input type="number" class="minutos-video" placeholder="Ingrese duración en minutos">
+            <input type="number" class="segundos-video" placeholder="Ingrese duración en segundos"><br>
+          </div>
+          
+          <div class="video-input-group">
+            <p>Video 2</p>
+            <input type="number" class="horas-video" placeholder="Ingrese duración en horas">
+            <input type="number" class="minutos-video" placeholder="Ingrese duración en minutos">
+            <input type="number" class="segundos-video" placeholder="Ingrese duración en segundos"><br>
+          </div>
+          <div class="video-input-group">
+            <p>Video 3</p>
+            <input type="number" class="horas-video" placeholder="Ingrese duración en horas">
+            <input type="number" class="minutos-video" placeholder="Ingrese duración en minutos">
+            <input type="number" class="segundos-video" placeholder="Ingrese duración en segundos"><br>
+          </div>
+          <div class="video-input-group">
+            <p>Video 4</p>
+            <input type="number" class="horas-video" placeholder="Ingrese duración en horas">
+            <input type="number" class="minutos-video" placeholder="Ingrese duración en minutos">
+            <input type="number" class="segundos-video" placeholder="Ingrese duración en segundos"><br>
+          </div>
+          <div class="video-input-group">
+            <p>Video 5</p>
+            <input type="number" class="horas-video" placeholder="Ingrese duración en horas">
+            <input type="number" class="minutos-video" placeholder="Ingrese duración en minutos">
+            <input type="number" class="segundos-video" placeholder="Ingrese duración en segundos"><br>
+          </div>
+          <button type="submit" id="submit" class="submit-button" >Calcular tiempo total</button>
         </form>
       </div>
       <div id="resultado"><strong>El tiempo total de los videos es de </strong></div>
 
 
-<script src="tarea3.js"></script> 
+ 
 </body>
+<script src="tarea3.js"></script>
 </html>
