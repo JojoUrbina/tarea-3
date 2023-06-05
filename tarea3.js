@@ -1,37 +1,32 @@
+const $horasVideos = document.querySelectorAll(".horas-video");
+const $minutosVideos = document.querySelectorAll(".minutos-video");
+const $segundosVideos = document.querySelectorAll(".segundos-video");
 const $botonCalcular = document.querySelector("#submit");
 $botonCalcular.onclick = function () {
-  const $horasVideos = document.querySelectorAll(".horas-video");
-  const $minutosVideos = document.querySelectorAll(".minutos-video");
-  const $segundosVideos = document.querySelectorAll(".segundos-video");
-  let totalHoras = 0;
-  let totalMinutos = 0;
-  let totalSegundos = 0;
+  const listaDeHorasVideos = [...$horasVideos].map((horas) =>
+    Number(horas.value)
+  );
+  const listaDeMinutosVideos = [...$minutosVideos].map((minutos) =>
+    Number(minutos.value)
+  );
+  const listaDeSegundosVideos = [...$segundosVideos].map((segundos) =>
+    Number(segundos.value)
+  );
   const horaEnMinutos = 60;
   const minutoEnSegundos = 60;
-  let totalizarPorUnidadDeTiempo = function (
-    elementoHoras,
-    elementoMinutos,
-    elementoSegundos
-  ) {
-    for (let i = 0; i < elementoHoras.length; i++) {
-      totalHoras += Number(elementoHoras[i].value);
-    }
-    for (let j = 0; j < elementoMinutos.length; j++) {
-      totalMinutos += Number(elementoMinutos[j].value);
-      if (totalMinutos >= horaEnMinutos) {
-        totalHoras++;
-        totalMinutos = totalMinutos - horaEnMinutos;
-      }
-    }
-    for (let k = 0; k < elementoSegundos.length; k++) {
-      totalSegundos += Number(elementoSegundos[k].value);
-      if (totalSegundos >= minutoEnSegundos) {
-        totalMinutos++;
-        totalSegundos = totalSegundos - minutoEnSegundos;
-      }
-    }
-  };
-  totalizarPorUnidadDeTiempo($horasVideos, $minutosVideos, $segundosVideos);
+  const totalSegundos = listaDeSegundosVideos.reduce(
+    (total, valor) => total + valor,
+    0
+  );
+  const totalMinutos =
+    listaDeMinutosVideos.reduce((total, valor) => total + valor, 0) +
+    Math.floor(totalSegundos / minutoEnSegundos);
+  const totalHoras =
+    listaDeHorasVideos.reduce((total, valor) => total + valor, 0) +
+    Math.floor(totalMinutos / horaEnMinutos);
+  const segundosRestantes = totalSegundos % minutoEnSegundos;
+  const minutosRestantes = totalMinutos % horaEnMinutos;
+
   document.querySelector("strong").innerText = ` ${totalHoras} horas 
-  ${totalMinutos} minutos y ${totalSegundos} segundos.`;
+  ${minutosRestantes} minutos y ${segundosRestantes} segundos.`;
 };
